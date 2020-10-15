@@ -1,6 +1,28 @@
-# Project
+# GRACE Decider
+
+Program to monitor status of an IaaC provisioning request for GRACE PaaS
 
 ## Repository contents
+
+**cmd**: Source code for Go Program
+
+## Usage
+
+1. Download latest release from [GitHub](https://github.com/GSA/grace-decider/releases)
+2. Unzip
+3. Copy binary executable file to a directory in your `$PATH` and make executable
+4. Set the following environment variables:
+
+```
+export GITHUB_TOKEN=<personal access token>
+export CIRCLE_TOKEN=<personal api key>
+```
+
+4. Run the command:
+
+```
+grace-decider --owner <Repo Owner> --repo <Repo Name> --pr <PR Number>
+```
 
 ## Public domain
 
