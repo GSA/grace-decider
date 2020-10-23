@@ -2,11 +2,17 @@
 
 Program to monitor status of an IaaC provisioning request for GRACE PaaS
 
+# WIP
+
+This is a work-in-progress.  See [TODO](https://github.com/GSA/grace-decider/TODO.md)
+
 ## Repository contents
 
-**cmd**: Source code for Go Program
+**decider**: Source code for Go Program
+**cmd**: Go command line wrapper for handler module
+**lambda**: Go lambda function wrapper for handler module
 
-## Usage
+## Usage (command line)
 
 1. Download latest release from [GitHub](https://github.com/GSA/grace-decider/releases)
 2. Unzip
@@ -16,13 +22,33 @@ Program to monitor status of an IaaC provisioning request for GRACE PaaS
 ```
 export GITHUB_TOKEN=<personal access token>
 export CIRCLE_TOKEN=<personal api key>
+export SN_USER=<ServiceNow Username>
+export SN_PASSWORD=<ServiceNow Password>
+export SN_INSTANCE=<ServiceNow Instance>
 ```
 
-4. Run the command:
+5. grace-decider --help:
 
 ```
-grace-decider --owner <Repo Owner> --repo <Repo Name> --pr <PR Number>
+-owner string
+    GitHub repository owner (default "GSA")
+-pr int
+    Pull Request Number
+-repo string
+    GitHub repository name
+-request string
+    JSON input file
 ```
+
+6. Example:
+
+```
+grace-decider --request=/tmp/RITM0769780.json --repo="g-grace" --pr="233"
+```
+
+## Usage (Lambda function)
+
+tbd
 
 ## Public domain
 

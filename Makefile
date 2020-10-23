@@ -2,19 +2,19 @@
 test: test_cmd plan_terraform
 
 lint_cmd: precommit
-	make -C cmd lint
+	make -C decider lint
 
 test_cmd: precommit
-	make -C cmd test
+	make -C decider test
 
 build_cmd: precommit
-	make -C cmd build
+	make -C decider build
 
 release_cmd: precommit
-	make -C cmd release
+	make -C decider release
 
 clean: precommit
-	make -C cmd clean
+	make -C decider clean
 
 precommit:
 ifneq ($(strip $(hooksPath)),.github/hooks)
