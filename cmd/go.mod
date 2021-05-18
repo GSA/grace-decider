@@ -1,3 +1,3 @@
 module github.com/GSA/grace-decider/cmd
 
-go 1.15
+go 1.16
